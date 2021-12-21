@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+body {
+    background-color: rgba(255, 235, 205, 0.5);
+}
+.badge {
+    text-transform: uppercase;
+}
+button {
+    transition: scale 1s;
+}
+button:hover {
+    transform: scale(1.15);
+    border: 1px groove white;
+}
+.badge {
+    animation: flash 1s linear 0s infinite;
+}
+
+@keyframes flash {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: none;
+
+    }
+}
+.navLink {
+    color: rgb(168, 126, 102);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+.navLink:hover {
+    color: white;
+    background: rgba(44, 36, 8, 0.353);
+    text-decoration: none;
+    border-radius: 5px;
+}
