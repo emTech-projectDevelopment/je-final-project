@@ -3,12 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-h1 {
-    text-align: center;
-}
 body {
     background-color: rgba(255, 235, 205, 0.5);
+}
+h1 {
+    text-align: center;
 }
 .badge {
     text-transform: uppercase;
