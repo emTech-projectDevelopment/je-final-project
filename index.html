@@ -85,8 +85,8 @@
                     </div>
 
                     <div class="text-right">
-                      <button type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
-                      <button type="reset" class="btn btn-danger" id="btnReset">RESET</button>
+                      <button action="/" type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
+                      <button action="/" type="reset" class="btn btn-danger" id="btnReset">RESET</button>
                     </div>
                   </form>
                 </div>
@@ -191,23 +191,23 @@
                   <div class="form-group">
                     <label for="taskname">Name</label>
                     <input type="text" class="form-control" id="taskname">
-                    <span class="tasknameError"></span>
+                    <span id="tasknameError"></span>
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea type="text" class="form-control" id="description"></textarea>
-                    <span class="descriptionError"></span>
+                    <textarea type="text" class="form-control" id="description" name="description"></textarea>
+                    <span id="descriptionError"></span>
                   </div>
                   <div class="form-group">
 
                     <label for="assignedTo">Assigned to</label>
                     <input type="text" class="form-control" id="assignedTo">
-                    <span class="assignedToError"></span>
+                    <span id="assignedToError"></span>
                   </div>
                   <div class="form-group">
                     <label for="dueDate">Due date</label>
                     <input type="date" class="form-control" id="dueDate">
-                    <span class="dueDateError"></span>
+                    <span id="dueDateError"></span>
                   </div>
 
                   <div class="form-group">
@@ -226,10 +226,9 @@
                       </div>
                     </div>
                   </div>
-
                   <div>
                     <button action="/" type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
-                    <button action="/" type="reset" class="btn btn-danger" id="btnreset">RESET</button>
+                    <button action="/" type="reset" class="btn btn-danger" id="btnReset">RESET</button>
                   </div>
                 </form>
 
@@ -242,7 +241,7 @@
   </div>
 
   <!-- JavaScript-->
-  <script src=".asset/js/script.js"></script>
+  <script src="asset/js/script.js"></script>
   <!-- Jqueary -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
