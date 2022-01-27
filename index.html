@@ -49,19 +49,22 @@
                     <div class="form-group">
                       <label for="taskname">Name</label>
                       <input type="text" class="form-control" id="taskname">
+                      <span id="tasknameError"></span>
                     </div>
                     <div class="form-group">
                       <label for="description">Description</label>
                       <textarea type="text" class="form-control" id="description"></textarea>
+                      <span id="descriptionError"></span>
                     </div>
                     <div class="form-group">
-
                       <label for="assignedTo">Assigned to</label>
                       <input type="text" class="form-control" id="assignedTo">
+                      <span id="assignedToError"></span>
                     </div>
                     <div class="form-group">
                       <label for="dueDate">Due date</label>
                       <input type="date" class="form-control" id="dueDate">
+                      <span id="duedateError"></span>
                     </div>
 
                     <div class="form-group">
@@ -72,10 +75,10 @@
                         <div class="col-auto">
                           <select class="form-select" aria-label="Default select example">
                             <option selected>SELECT</option>
-                            <option value="todo">TO-DO</option>
-                            <option value="inprogress">IN PROGRESS</option>
-                            <option value="review">REVIEW</option>
-                            <option value="done">DONE</option>
+                            <option id="optionValue" value="todo">TO-DO</option>
+                            <option id="optionValue" value="inprogress">IN PROGRESS</option>
+                            <option id="optionValue" value="review">REVIEW</option>
+                            <option id="optionValue" value="done">DONE</option>
                           </select>
                         </div>
                       </div>
