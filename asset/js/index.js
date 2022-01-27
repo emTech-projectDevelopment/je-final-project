@@ -1,34 +1,38 @@
 // Form Inputs
-let taskname = document.querySelector('#taskname');
-let description = document.querySelector('#description');
-let assignedto = document.querySelector('#assignedTo');
-let duedate = document.querySelector('#dueDate');
+const form = document.querySelector('editTask');
+const taskname = document.querySelector('#taskname');
+const description = document.querySelector('#description');
+const assignedto = document.querySelector('#assignedTo');
+const duedate = document.querySelector('#dueDate');
 
 // Form Buttons
-let btnSubmit = document.querySelector('#btnSubmit');
-let btnReset = document.querySelector('#btnReset');
+const btnSubmit = document.querySelector('#btnSubmit');
+const btnReset = document.querySelector('#btnReset');
 
 // Error Messages
-let tasknameError = document.querySelector('#tasknameError');
-let descriptionError = document.querySelector('#descriptionError');
-let assignedToError = document.querySelector('#assignedToError');
-let dueDateError = document.querySelector('#dueDateError');
-let optionValue = document.querySelector('#optionValue');
+const tasknameError = document.querySelector('#tasknameError');
+const descriptionError = document.querySelector('#descriptionError');
+const assignedToError = document.querySelector('#assignedToError');
+const dueDateError = document.querySelector('#dueDateError');
+const optionValue = document.querySelector('#optionValue');
 
-function formSubmit(){
-    if (taskname.value.length < 5) {
-        tasknameError.innerText = 'Name must be longer than 5 Characters.'
-    }
-};
-
-btnSubmit.addEventListener('click', formSubmit);
-
-let dateElement = document.querySelector('#showDate');
+const dateElement = document.querySelector('#showDate');
 let d = new Date()
 let addMonth = 0
 if (d.getMonth() === 0) {
     addMonth += 1
 }
-
 dateElement.innerText = `Current date: ${d.getDate()} ${addMonth} ${d.getFullYear()}`
 console.log(d)
+
+form.addEventListener('submit', (error)=> {
+    let errorMessage = [];
+    if(taskname.value.length <= 5) {
+        errorMessage.push('Password must be longer than 5 letters');
+    }
+    if (errorMessage.length > 0) {
+        error.preventDefault();
+        error.stopPropagation();
+        tasknameError.innerHTML = errorMessage.join(', ');
+    }
+});
