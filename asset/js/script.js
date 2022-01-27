@@ -1,4 +1,3 @@
-
 // Form Inputs
 let taskname = document.querySelector('#taskname');
 let description = document.querySelector('#description');
@@ -16,3 +15,10 @@ let assignedToError = document.querySelector('#assignedToError');
 let dueDateError = document.querySelector('#dueDateError');
 let optionValue = document.querySelector('#optionValue');
 
+function formSubmit(){
+    if (taskname.value.length < 5) {
+        tasknameError.innerText = 'Name must be longer than 5 Characters.'
+    }
+};
+
+btnSubmit.addEventListener('click', formSubmit);

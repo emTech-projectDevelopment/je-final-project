@@ -1,4 +1,4 @@
-<!doctype html>git 
+<!doctype html> 
 <html lang="en">
 
 <head>
@@ -48,23 +48,23 @@
                   <form id="newTask">
                     <div class="form-group">
                       <label for="taskname">Name</label>
-                      <input type="text" class="form-control" id="taskname">
-                      <span id="tasknameError"></span>
+                      <input type="text" class="form-control" id="taskname" required>
+                      <span id="error tasknameError"></span>
                     </div>
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <textarea type="text" class="form-control" id="description"></textarea>
-                      <span id="descriptionError"></span>
+                      <textarea type="text" class="form-control" id="description" required></textarea>
+                      <span id="error descriptionError"></span>
                     </div>
                     <div class="form-group">
                       <label for="assignedTo">Assigned to</label>
-                      <input type="text" class="form-control" id="assignedTo">
-                      <span id="assignedToError"></span>
+                      <input type="text" class="form-control" id="assignedTo" required>
+                      <span id="error assignedToError"></span>
                     </div>
                     <div class="form-group">
                       <label for="dueDate">Due date</label>
-                      <input type="date" class="form-control" id="dueDate">
-                      <span id="duedateError"></span>
+                      <input type="date" class="form-control" id="dueDate" required>
+                      <span id="error duedateError"></span>
                     </div>
 
                     <div class="form-group">
@@ -89,7 +89,6 @@
                       <button type="reset" class="btn btn-danger" id="btnReset">RESET</button>
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
@@ -192,19 +191,23 @@
                   <div class="form-group">
                     <label for="taskname">Name</label>
                     <input type="text" class="form-control" id="taskname">
+                    <span class="tasknameError"></span>
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
                     <textarea type="text" class="form-control" id="description"></textarea>
+                    <span class="descriptionError"></span>
                   </div>
                   <div class="form-group">
 
                     <label for="assignedTo">Assigned to</label>
                     <input type="text" class="form-control" id="assignedTo">
+                    <span class="assignedToError"></span>
                   </div>
                   <div class="form-group">
                     <label for="dueDate">Due date</label>
                     <input type="date" class="form-control" id="dueDate">
+                    <span class="dueDateError"></span>
                   </div>
 
                   <div class="form-group">
@@ -215,18 +218,18 @@
                       <div class="col-auto">
                         <select class="form-select" aria-label="Default select example">
                           <option selected>Status</option>
-                          <option value="todo">To-Do</option>
-                          <option value="inprogress">In-Progress</option>
-                          <option value="review">Review</option>
-                          <option value="done">Done</option>
+                          <option id="optionValue" value="todo">To-Do</option>
+                          <option id="optionValue" value="inprogress">In-Progress</option>
+                          <option id="optionValue" value="review">Review</option>
+                          <option id="optionValue" value="done">Done</option>
                         </select>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <button type="submit" class="btn btn-success">SUBMIT</button>
-                    <button type="reset" class="btn btn-danger">RESET</button>
+                    <button action="/" type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
+                    <button action="/" type="reset" class="btn btn-danger" id="btnreset">RESET</button>
                   </div>
                 </form>
 
@@ -234,14 +237,12 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
 
   <!-- JavaScript-->
-  <script src="js/index.js"></script>
+  <script src=".asset/js/script.js"></script>
   <!-- Jqueary -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
