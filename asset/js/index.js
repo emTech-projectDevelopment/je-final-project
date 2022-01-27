@@ -1,5 +1,5 @@
 // Form Inputs
-const form = document.querySelector('editTask');
+const form = document.querySelector('#newTask');
 const taskname = document.querySelector('#taskname');
 const description = document.querySelector('#description');
 const assignedto = document.querySelector('#assignedTo');
