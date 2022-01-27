@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html>git 
 <html lang="en">
 
 <head>
@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+  <!-- Link CSS -->
   <link rel="stylesheet" href="./asset/css/styles.css">
 
   <title>Task Planner</title>
@@ -48,19 +49,22 @@
                     <div class="form-group">
                       <label for="taskname">Name</label>
                       <input type="text" class="form-control" id="taskname">
+                      <span id="tasknameError"></span>
                     </div>
                     <div class="form-group">
                       <label for="description">Description</label>
                       <textarea type="text" class="form-control" id="description"></textarea>
+                      <span id="descriptionError"></span>
                     </div>
                     <div class="form-group">
-
-                      <label for="assignedto">Assigned to</label>
-                      <input type="text" class="form-control" id="assignedto">
+                      <label for="assignedTo">Assigned to</label>
+                      <input type="text" class="form-control" id="assignedTo">
+                      <span id="assignedToError"></span>
                     </div>
                     <div class="form-group">
-                      <label for="duedate">Due date</label>
-                      <input type="date" class="form-control" id="duedate">
+                      <label for="dueDate">Due date</label>
+                      <input type="date" class="form-control" id="dueDate">
+                      <span id="duedateError"></span>
                     </div>
 
                     <div class="form-group">
@@ -71,18 +75,18 @@
                         <div class="col-auto">
                           <select class="form-select" aria-label="Default select example">
                             <option selected>SELECT</option>
-                            <option value="todo">TO-DO</option>
-                            <option value="inprogress">IN PROGRESS</option>
-                            <option value="review">REVIEW</option>
-                            <option value="done">DONE</option>
+                            <option id="optionValue" value="todo">TO-DO</option>
+                            <option id="optionValue" value="inprogress">IN PROGRESS</option>
+                            <option id="optionValue" value="review">REVIEW</option>
+                            <option id="optionValue" value="done">DONE</option>
                           </select>
                         </div>
                       </div>
                     </div>
 
                     <div class="text-right">
-                      <button type="submit" class="btn btn-success">SUBMIT</button>
-                      <button type="reset" class="btn btn-danger">RESET</button>
+                      <button type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
+                      <button type="reset" class="btn btn-danger" id="btnReset">RESET</button>
                     </div>
                   </form>
 
@@ -195,12 +199,12 @@
                   </div>
                   <div class="form-group">
 
-                    <label for="assignedto">Assigned to</label>
-                    <input type="text" class="form-control" id="assignedto">
+                    <label for="assignedTo">Assigned to</label>
+                    <input type="text" class="form-control" id="assignedTo">
                   </div>
                   <div class="form-group">
-                    <label for="duedate">Due date</label>
-                    <input type="date" class="form-control" id="duedate">
+                    <label for="dueDate">Due date</label>
+                    <input type="date" class="form-control" id="dueDate">
                   </div>
 
                   <div class="form-group">
