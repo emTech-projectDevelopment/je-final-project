@@ -11,6 +11,7 @@ h1 {
 }
 .badge {
     text-transform: uppercase;
+    animation: flash 1s linear 0s infinite;
 }
 button {
     transition: scale 1s;
@@ -18,9 +19,6 @@ button {
 button:hover {
     transform: scale(1.15);
     border: 1px groove white;
-}
-.badge {
-    animation: flash 1s linear 0s infinite;
 }
 
 @keyframes flash {
