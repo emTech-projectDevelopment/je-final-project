@@ -13,7 +13,7 @@ const taskname = document.querySelector('#taskname');
 const description = document.querySelector('#description');
 const assignedTo = document.querySelector('#assignedTo');
 const duedate = document.querySelector('#dueDate');
-const optionValue = document.querySelector('#optionValue');
+const optionValue = document.querySelectorAll('#optionValue');
 
 
 // Error Messages
@@ -37,7 +37,7 @@ form.addEventListener('submit', (error)=> {
     if(duedate.value.length < 1){
         errorMessage.push('Enter a valid date. ')
     }
-    if(optionValue.value.length < 1){
+    if(optionValue.value == null){
         errorMessage.push('Enter task status.')
     }
     if (errorMessage.length > 0) {
