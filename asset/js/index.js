@@ -23,31 +23,31 @@ const htmlErrorMessage = document.querySelector('#errorMessage');
 form.addEventListener('submit', (error)=> {
     let errorMessage = [];
     if (taskname.value === '' || taskname.value == null){
-        errorMessage.push('Enter a Task Name.')
+        errorMessage.push('Enter a Task Name. ')
     }
     if(taskname.value.length <= 5) {
-        errorMessage.push(`${taskname.value}. Name must be longer than 5 letters`);
+        errorMessage.push(`Name must be longer than 5 letters. `);
     }
     if(description.value.length <= 5) {
-        errorMessage.push(`${description.value}. Description must be longer than 5 letters`);
+        errorMessage.push(`Description must be longer than 5 letters. `);
     }
     if(assignedTo.value.length <= 5) {
-        errorMessage.push(`${assignedTo.value}. Assigned To must be longer than 5 letters`);
+        errorMessage.push(`Assigned To must be longer than 5 letters. `);
     }
     if(duedate.value.length < 1){
-        errorMessage.push('Enter a valid date.')
+        errorMessage.push('Enter a valid date. ')
     }
-    if(optionValue.value === ''){
+    if(optionValue.value.length < 1){
         errorMessage.push('Enter task status.')
     }
-    // LOG DATA
-    console.log(taskname.value)
-    console.log(description.value)
-    console.log(assignedTo.value)
-    console.log(duedate.value)
-    console.log(optionValue.value)
     if (errorMessage.length > 0) {
         error.preventDefault();
         htmlErrorMessage.innerHTML = errorMessage.join(' ');
+    // LOG DATA
+        console.log(taskname.value)
+        console.log(description.value)
+        console.log(assignedTo.value)
+        console.log(duedate.value)
+        console.log(optionValue.value)
     }
 });

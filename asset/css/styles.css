@@ -48,3 +48,7 @@ button:hover {
     text-decoration: none;
     border-radius: 5px;
 }
+#errorMessage {
+    color: red;
+    font-variant: small-caps;
+}
