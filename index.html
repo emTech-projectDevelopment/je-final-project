@@ -49,19 +49,19 @@
                   <form id="newTask">
                     <div class="form-group">
                       <label for="taskname">Name</label>
-                      <input type="text" class="form-control" id="taskname" required>
+                      <input type="text" class="form-control" id="taskname" name="taskname" >
                     </div>
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <textarea type="text" class="form-control" id="description" required></textarea>
+                      <textarea type="text" class="form-control" id="description" name="description" ></textarea>
                     </div>
                     <div class="form-group">
                       <label for="assignedTo">Assigned to</label>
-                      <input type="text" class="form-control" id="assignedTo" required>
+                      <input type="text" class="form-control" id="assignedTo" name="assignedTo" >
                     </div>
                     <div class="form-group">
                       <label for="dueDate">Due date</label>
-                      <input type="date" class="form-control" id="dueDate" required>
+                      <input type="date" class="form-control" id="dueDate" name="dueDate">
                     </div>
                     <div class="form-group">
                       <div class="row">
@@ -186,22 +186,20 @@
                 <form action="/" id="editTask">
                   <div class="form-group">
                     <label for="taskname">Name</label>
-                    <input type="text" class="form-control" id="taskname">
+                    <input type="text" class="form-control" id="taskname" name="taskname">
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
                     <textarea type="text" class="form-control" id="description" name="description"></textarea>
                   </div>
                   <div class="form-group">
-
                     <label for="assignedTo">Assigned to</label>
-                    <input type="text" class="form-control" id="assignedTo">
+                    <input type="text" class="form-control" id="assignedTo" name="assignedTo">
                   </div>
                   <div class="form-group">
                     <label for="dueDate">Due date</label>
-                    <input type="date" class="form-control" id="dueDate">
+                    <input type="date" class="form-control" id="dueDate" name="dueDate">
                   </div>
-
                   <div class="form-group">
                     <div class="row">
                       <div class="col-auto">
