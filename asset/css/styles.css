@@ -48,6 +48,12 @@ button:hover {
     text-decoration: none;
     border-radius: 5px;
 }
+#showTime,
+#showDate {
+    font-family: serif;
+    font-weight: 400;
+    font-size:1.2rem; 
+}
 #errorMessage,
 #editErrorMessage {
     color: red;
