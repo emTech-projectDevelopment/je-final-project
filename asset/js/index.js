@@ -4,50 +4,111 @@ let addMonth = 0
 if (d.getMonth() === 0) {
     addMonth += 1
 }
-dateElement.innerText = `Current date: ${d.getDate()} ${addMonth} ${d.getFullYear()}`
+dateElement.innerText = `Current date: ${d.getDate()} / ${addMonth} / ${d.getFullYear()}`
 console.log(d)
 
 // Form Inputs
-const form = document.querySelector('#newTask');
+const newForm = document.querySelector('#newTask');
+const editForm = document.querySelector('#editTask');
 const taskname = document.querySelector('#taskname');
 const description = document.querySelector('#description');
 const assignedTo = document.querySelector('#assignedTo');
 const duedate = document.querySelector('#dueDate');
-const optionValue = document.querySelectorAll('#optionValue');
 
+// EDIT FORM SELECTORS
+const edittaskname = document.querySelector('#edittaskname');
+const editdescription = document.querySelector('#editdescription');
+const editassignedTo = document.querySelector('#editassignedTo');
+const editduedate = document.querySelector('#editdueDate');
 
+const getSelectedValue = function(){
+    let val = document.querySelector('#getValue').value;
+    return val
+};
+
+const getEditSelectedValue = function(){
+    let VAL = document.querySelector('#getEditValue').value;
+    return VAL
+};
 // Error Messages
 const htmlErrorMessage = document.querySelector('#errorMessage');
+const EDITErrorMessage = document.querySelector('#editErrorMessage');
 
 
-form.addEventListener('submit', (error)=> {
-    let errorMessage = [];
+newForm.addEventListener('submit', (error)=> {
+    let newErrorMessage = [];
     if (taskname.value === '' || taskname.value == null){
-        errorMessage.push('Enter a Task Name. ')
+        newErrorMessage.push('Enter a Task Name. ')
     }
     if(taskname.value.length <= 5) {
-        errorMessage.push(`Name must be longer than 5 letters. `);
+        newErrorMessage.push(`Name must be longer than 5 letters. `);
     }
     if(description.value.length <= 5) {
-        errorMessage.push(`Description must be longer than 5 letters. `);
+        newErrorMessage.push(`Description must be longer than 5 letters. `);
     }
     if(assignedTo.value.length <= 5) {
-        errorMessage.push(`Assigned To must be longer than 5 letters. `);
+        newErrorMessage.push(`Assigned To must be longer than 5 letters. `);
     }
     if(duedate.value.length < 1){
-        errorMessage.push('Enter a valid date. ')
+        newErrorMessage.push('Enter a valid date. ')
     }
-    if(optionValue.value == null){
-        errorMessage.push('Enter task status.')
+    if(getSelectedValue() === ''){
+        newErrorMessage.push('Enter task status.')
     }
-    if (errorMessage.length > 0) {
+    if (newErrorMessage.length > 0) {
         error.preventDefault();
-        htmlErrorMessage.innerHTML = errorMessage.join(' ');
+        htmlErrorMessage.innerHTML = newErrorMessage.join(' ');
     // LOG DATA
         console.log(taskname.value)
         console.log(description.value)
         console.log(assignedTo.value)
         console.log(duedate.value)
-        console.log(optionValue.value)
+        console.log(getSelectedValue)
+    setTimeout(function(){htmlErrorMessage.innerHTML = ""}, 2500)
     }
+});
+
+editForm.addEventListener('submit', (e)=> {
+    let editErrorMessage = [];
+    if (edittaskname.value === '' || edittaskname.value == null){
+        editErrorMessage.push('Enter a Task Name. ')
+    }
+    if(edittaskname.value.length <= 5) {
+        editErrorMessage.push(`Name must be longer than 5 letters. `);
+    }
+    if(editdescription.value.length <= 5) {
+        editErrorMessage.push(`Description must be longer than 5 letters. `);
+    }
+    if(editassignedTo.value.length <= 5) {
+        editErrorMessage.push(`Assigned To must be longer than 5 letters. `);
+    }
+    if(editduedate.value.length < 1){
+        editErrorMessage.push('Enter a valid date. ')
+    }
+    if(getEditSelectedValue() === ''){
+        editErrorMessage.push('Enter task status.')
+    }
+    if (editErrorMessage.length > 0) {
+        e.preventDefault();
+        EDITErrorMessage.innerHTML = editErrorMessage.join(' ');
+    // LOG DATA
+        console.log(taskname.value)
+        console.log(description.value)
+        console.log(assignedTo.value)
+        console.log(duedate.value)
+        console.log(getEditSelectedValue)
+        setTimeout(function(){EDITErrorMessage.innerHTML = ""}, 2500)
+    }
+});
+// From Buttons
+const btnReset = document.querySelectorAll('#btnReset');
+
+btnReset.addEventListener('click', function(){
+    htmlErrorMessage.innerText = '';
+});
+
+const btnResetEFORM = document.querySelector('#btnResetEFORM');
+
+btnResetEFORM.addEventListener('click', function(){
+    EDITErrorMessage.innerText = '';
 });

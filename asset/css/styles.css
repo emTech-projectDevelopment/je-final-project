@@ -48,7 +48,8 @@ button:hover {
     text-decoration: none;
     border-radius: 5px;
 }
-#errorMessage {
+#errorMessage,
+#editErrorMessage {
     color: red;
     font-variant: small-caps;
 }
