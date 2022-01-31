@@ -1,25 +1,26 @@
 // Initialize a new TaskManager with currentId set to 0
 
 const taskManager = new TaskManager(0);
-console.log(taskManager)
+console.log(taskManager);
 
 // SELECTOR FOR DATE AND TIME
-const dateElement = document.querySelector('#showDate');
-const timeElement = document.querySelector('#showTime');
-
+const dateElement = document.querySelector("#showDate");
+const timeElement = document.querySelector("#showTime");
 
 // FUNCTION FOR TIME OBJECT
 function tickingTime() {
   let timeNow = new Date();
-  return timeElement.innerText = `${timeNow.getHours()}:${timeNow.getMinutes()}:${timeNow.getSeconds()}`
+  return (timeElement.innerText = `${timeNow.getHours()}:${timeNow.getMinutes()}:${timeNow.getSeconds()}`);
 }
 // DATE OBJECT
-let d = new Date()
+let d = new Date();
 
 // DISPLAY TIME AND DATE
-tickingTime()
+tickingTime();
 setInterval(tickingTime, 1000);
-dateElement.innerText = `${d.getDate()} / ${d.getMonth() + 1} / ${d.getFullYear()}`
+dateElement.innerText = `${d.getDate()} / ${
+  d.getMonth() + 1
+} / ${d.getFullYear()}`;
 
 // CLEAR INPUTS AFTER SUBMIT
 const clearInputs = () => {
@@ -32,27 +33,27 @@ const clearInputs = () => {
 };
 
 // NEW FORM SELECT VALUE
-const getSelectedValue = function(){
-  let val = document.querySelector('#getStatus').value;
-  return val
+const getSelectedValue = function () {
+  let val = document.querySelector("#getStatus").value;
+  return val;
 };
 
 // ERROR MESSAGE SELECTORS
-const NewErrorMessage = document.querySelector('#errorMessage');
-const EditErrorMessage = document.querySelector('#editErrorMessage');
+const NewErrorMessage = document.querySelector("#errorMessage");
+const EditErrorMessage = document.querySelector("#editErrorMessage");
 
 // FORM SELECTORS
-const newForm = document.querySelector('#newTask');
-const editForm = document.querySelector('#editTask');
+const newForm = document.querySelector("#newTask");
+const editForm = document.querySelector("#editTask");
 
 //ADD SUBMIT EVENT LISTENER
 newForm.addEventListener("submit", (error) => {
   // ALLOCATE SELECTORS
-  let taskname = document.querySelector('#taskname');
-  let description = document.querySelector('#description');
-  let assignedTo = document.querySelector('#assignedTo');
-  let dueDate = document.querySelector('#dueDate');
-  let getStatus = document.querySelector('#getstatus');
+  let taskname = document.querySelector("#taskname");
+  let description = document.querySelector("#description");
+  let assignedTo = document.querySelector("#assignedTo");
+  let dueDate = document.querySelector("#dueDate");
+  let getStatus = document.querySelector("#getstatus");
   let newErrorMessage = [];
   error.preventDefault();
 
@@ -61,10 +62,10 @@ newForm.addEventListener("submit", (error) => {
   console.log("Task Assigned To :" + assignedTo.value.length);
   console.log("Task Due Date :" + dueDate.value);
   console.log("Task Status:" + getSelectedValue());
-  
+
   // VALIDATE NOT EMPTY STRING & HAS VALUE
-  if (taskname.value === '' || taskname.value == null) {
-    newErrorMessage.push('Enter a Task Name. ')
+  if (taskname.value === "" || taskname.value == null) {
+    newErrorMessage.push("Enter a Task Name. ");
   }
   // VALIDATE IF TASK NAME IS LONGER THAN 5 CHARACTERS
   if (taskname.value.length <= 5) {
@@ -83,17 +84,17 @@ newForm.addEventListener("submit", (error) => {
 
   // VALIDATE IF DUE DATE HAS BEEN SELECTED
   if (dueDate.value.length < 1) {
-    newErrorMessage.push('Enter a valid date. ')
+    newErrorMessage.push("Enter a valid date. ");
   }
-    
+
   // VALIDATE IF STATUS HAS A SELECTED VALUE
-  if (getSelectedValue() === '') {
-    newErrorMessage.push('Enter task status.')
+  if (getSelectedValue() === "") {
+    newErrorMessage.push("Enter task status.");
   }
   // VERIFY IF ARRAY CONTAINS ANY ERROR MESSAGES
   if (newErrorMessage.length > 0) {
     error.preventDefault();
-    NewErrorMessage.innerHTML = newErrorMessage.join(' ');
+    NewErrorMessage.innerHTML = newErrorMessage.join(" ");
   } else {
     // SUBMIT VALID FORM TO ARRAY
     taskManager.addTask(
