@@ -50,7 +50,8 @@ button:hover {
 #showDate {
     font-family: serif;
     font-weight: 400;
-    font-size:1.2rem; 
+    font-size:1.2rem;
+    text-shadow: 2px 2px silver;
 }
 #errorMessage,
 #editErrorMessage {

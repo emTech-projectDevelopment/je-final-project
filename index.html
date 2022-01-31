@@ -72,12 +72,11 @@
                           <label class="status">Status</label>
                         </div>
                         <div class="col-auto">
-                          <select id='getValue' class="form-select" aria-label="Default select example" onchange="getSelectedValue();">
+                          <select id="getStatus" class="form-select" aria-label="Default select example"> <!--onchange="getSelectedValue();"-->
                             <option value="" selected>SELECT</option>
-                            <option id="optionValue" value="todo">TO DO</option>
-                            <option id="optionValue" value="inprogress">IN PROGRESS</option>
-                            <option id="optionValue" value="review">REVIEW</option>
-                            <option id="optionValue" value="done">DONE</option>
+                            <option value="inprogress">IN PROGRESS</option>
+                            <option value="review">REVIEW</option>
+                            <option value="done">DONE</option>
                           </select>
                         </div>
                       </div>
@@ -97,7 +96,7 @@
         <!-- Task content cards-->
         <ul class="list-group mb-4" id="taskList">
 
-          <li class="list-group-item">
+          <!--<li class="list-group-item">
             <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
               <h5>Task Name</h5>
               <span class="badge bg-danger text-light">Review</span>
@@ -171,7 +170,7 @@
                 data-target="#editForm">EDIT</button>
               <button class="delete btn btn-danger btn-sm" name="delete">DELETE</button>
             </section>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Modal-->
@@ -209,12 +208,12 @@
                         <label class="status">Status</label>
                       </div>
                       <div class="col-auto">
-                        <select id='getEditValue' class="form-select" aria-label="Default select example" onchange="getEditSelectedValue();">
+                        <select id='getEditStatus' class="form-select" aria-label="Default select example" onchange="getEditSelectedValue();">
                           <option value="" selected>SELECT</option>
-                          <option id="optionValue" value="todo">TO DO</option>
-                          <option id="optionValue" value="inprogress">IN PROGRESS</option>
-                          <option id="optionValue" value="review">REVIEW</option>
-                          <option id="optionValue" value="done">DONE</option>
+                          <option value="todo">TO DO</option>
+                          <option value="inprogress">IN PROGRESS</option>
+                          <option value="review">REVIEW</option>
+                          <option value="done">DONE</option>
                         </select>
                       </div>
                     </div>
@@ -234,6 +233,7 @@
   </div>
 
   <!-- JavaScript-->
+  <script src="asset/js/taskManager.js"></script>
   <script src="asset/js/index.js"></script>
   <!-- Jqueary -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
