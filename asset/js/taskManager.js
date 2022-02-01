@@ -1,14 +1,17 @@
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
-  const html = `<li class="list-group-item">
+const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+  const html = `<li class="list-group-item" data-task-id=${id}>
   <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-    <h5>${name}</h5>
+    <h5>Task Name : ${name}</h5>
     <span class="badge bg-danger text-light">${status}</span>
   </div>
   <div class="d-flex w-100 mb-3 justify-content-between">
-    <h6>${assignedTo}</h6>
-    <h6>${dueDate}</h6>
+    <h6>Assigned to : ${assignedTo}</h6>
+    <div class="group-right">
+      <h6>DUE DATE : ${dueDate}</h6>
+      <button class="done-button" id="markDone">Mark as done</button>
+    </div>
   </div>
-  <p>${description}</p>
+  <p>Task Description : ${description}</p>
   <section class="text-right">
     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
       data-target="#editForm">EDIT</button>
@@ -18,14 +21,14 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
   return html;
 };
 
-// Create the TaskManager class
+// TASKMANAGER CLASS
 class TaskManager {
   constructor(currentId = 0) {
     this.tasks = [];
     this.currentId = currentId;
   }
 
-  // Create the addTask method
+  // ADD TASK METHOD
   addTask(name, description, assignedTo, dueDate, status) {
     // Create a task object that we will push to the list of tasks
 
@@ -35,10 +38,26 @@ class TaskManager {
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: status,
+      status: status
     };
 
     this.tasks.push(task);
+  }
+
+  // GET TASK BY ID METHOD
+  getTaskById(taskId) {
+    let thisTask;
+    // LOOP AND ALLOCATE CURRENT ID    (!! not currentId !!)
+    for (let i = 0; i < this.tasks.length; i++) {
+      // CURRENT TASK
+      const task = this.tasks[i];
+      // CHECK IF ID IS SAME
+      if (task.id === taskId) {
+        thisTask = task;
+      }
+    }
+    // Return the found task
+    return thisTask;
   }
 
   // RENDER METHOD
@@ -53,6 +72,7 @@ class TaskManager {
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
       // CREATE VARIABLE FOR CREAT TASK FUNCTION
       const taskHtml = createTaskHtml(
+        task.id,
         task.name,
         task.description,
         task.assignedTo,

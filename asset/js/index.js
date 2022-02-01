@@ -21,9 +21,8 @@ let d = new Date();
 // DISPLAY TIME AND DATE
 tickingTime();
 setInterval(tickingTime, 1000);
-dateElement.innerText = `${d.getDate()} / ${
-  d.getMonth() + 1
-} / ${d.getFullYear()}`;
+dateElement.innerText = `${d.getDate()} / ${d.getMonth() + 1} / ${d.getFullYear()}`;
+
 
 // Close the modal after submit
 function closeModal() {
@@ -61,7 +60,6 @@ newForm.addEventListener("submit", (error) => {
   let description = document.querySelector("#description");
   let assignedTo = document.querySelector("#assignedTo");
   let dueDate = document.querySelector("#dueDate");
-  let getStatus = document.querySelector("#getstatus");
   let newErrorMessage = [];
   error.preventDefault();
 
@@ -118,6 +116,26 @@ newForm.addEventListener("submit", (error) => {
     taskManager.save();
   }
 });
+
+
+
+const taskList = document.querySelector("#taskList");
+const getStatus = document.querySelector("#getStatus").value;
+
+taskList.addEventListener('click', (event)=> {
+  if (event.target.classList.contains('done-button')) {
+    const parentTask =
+    event.target.parentElement.parentElement.parentElement;
+    console.log(parentTask)
+    const taskId = Number(parentTask.dataset.taskId);
+    const task = taskManager.getTaskById(taskId);
+    task.status = "Done";
+
+    taskManager.render();
+  }
+});
+
+
 
 // Still working on closing the add task modal on succesfull submission
 //of the form
