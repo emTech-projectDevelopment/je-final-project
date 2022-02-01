@@ -1,102 +1,116 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous">
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="./asset/css/styles.css">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./asset/css/styles.css">
 
-  <title>Task Planner</title>
-</head>
+    <title>Task Planner</title>
+  </head>
 
-<body>
-  <div class="container">
-    <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; margin: 5px 100px;">
-      <h1 class="my-3 pt-3">Task List</h1>
-      <span id="showTime"></span>
-      <span id="showDate"></span>
-    </div>
-    <div class="row">
-      <div class="col">
+  <body>
+    <div class="container">
+      <div
+        style="display: flex; flex-direction: column; justify-content:
+        space-between; align-items: center; margin: 5px 100px;">
+        <h1 class="my-3 pt-3">Task List</h1>
+        <span id="showTime"></span>
+        <span id="showDate"></span>
+      </div>
+      <div class="row">
+        <div class="col">
 
-        <div class="container">
-          
-          <!-- Nav Links -->
-          <a href="#" class="navLink">to-do</a>
-          <a href="#" class="navLink">in-progress</a>
-          <a href="#" class="navLink">review</a>
-          <a href="#" class="navLink">done</a>
-          <!-- Open modal button -->
-          <button type="button" class="btn btn-success float-right" data-toggle="modal"
-            data-target="#addForm">ADD</button><br><br>
+          <div class="container">
 
-          <!-- Modal -->
-          <div class="modal fade" id="addForm" role="dialog">
-            <div class="modal-dialog">
+            <!-- Nav Links -->
+            <a href="#" class="navLink">to-do</a>
+            <a href="#" class="navLink">in-progress</a>
+            <a href="#" class="navLink">review</a>
+            <a href="#" class="navLink">done</a>
+            <!-- Open modal button -->
+            <button type="button" class="btn btn-success float-right"
+              data-toggle="modal"
+              data-target="#addForm">ADD</button><br><br>
 
-              <!-- Modal add form-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">Add Task</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <span id="errorMessage"></span>
-                  <form id="newTask">
-                    <div class="form-group">
-                      <label for="taskname">Name</label>
-                      <input type="text" class="form-control" id="taskname" name="taskname" >
-                    </div>
-                    <div class="form-group">
-                      <label for="description">Description</label>
-                      <textarea type="text" class="form-control" id="description" name="description" ></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="assignedTo">Assigned to</label>
-                      <input type="text" class="form-control" id="assignedTo" name="assignedTo" >
-                    </div>
-                    <div class="form-group">
-                      <label for="dueDate">Due date</label>
-                      <input type="date" class="form-control" id="dueDate" name="dueDate">
-                    </div>
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-auto">
-                          <label class="status">Status</label>
-                        </div>
-                        <div class="col-auto">
-                          <select id="getStatus" class="form-select" aria-label="Default select example"> <!--onchange="getSelectedValue();"-->
-                            <option value="" selected>SELECT</option>
-                            <option value="inprogress">IN PROGRESS</option>
-                            <option value="review">REVIEW</option>
-                            <option value="done">DONE</option>
-                          </select>
+            <!-- Modal -->
+            <div class="modal fade" id="addForm" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal add form-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Add Task</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <span id="errorMessage"></span>
+                    <form id="newTask">
+                      <div class="form-group">
+                        <label for="taskname">Name</label>
+                        <input type="text" class="form-control" id="taskname"
+                          name="taskname">
+                      </div>
+                      <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control"
+                          id="description" name="description"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="assignedTo">Assigned to</label>
+                        <input type="text" class="form-control" id="assignedTo"
+                          name="assignedTo">
+                      </div>
+                      <div class="form-group">
+                        <label for="dueDate">Due date</label>
+                        <input type="date" class="form-control" id="dueDate"
+                          name="dueDate">
+                      </div>
+                      <div class="form-group">
+                        <div class="row">
+                          <div class="col-auto">
+                            <label class="status">Status</label>
+                          </div>
+                          <div class="col-auto">
+                            <select id="getStatus" class="form-select"
+                              aria-label="Default select example">
+                              <!--onchange="getSelectedValue();"-->
+                              <option value="" selected>SELECT</option>
+                              <option value="inprogress">IN PROGRESS</option>
+                              <option value="review">REVIEW</option>
+                              <option value="done">DONE</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="text-right">
-                      <button action="submit" type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
-                      <button action="reset" type="reset" class="btn btn-danger" id="btnReset">RESET</button>
-                    </div>
-                  </form>
+                      <div class="text-right">
+                        <button action="submit" type="submit" class="btn
+                          btn-success" id="btnSubmit">SUBMIT</button>
+                        <button action="reset" type="reset" class="btn
+                          btn-danger" id="btnReset">RESET</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Task content cards-->
-        <ul class="list-group mb-4" id="taskList">
+          <!-- Task content cards-->
+          <ul class="list-group mb-4" id="taskList">
 
-          <!--<li class="list-group-item">
+            <!--<li class="list-group-item">
             <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
               <h5>Task Name</h5>
               <span class="badge bg-danger text-light">Review</span>
@@ -171,83 +185,93 @@
               <button class="delete btn btn-danger btn-sm" name="delete">DELETE</button>
             </section>
           </li> -->
-        </ul>
+          </ul>
 
-        <!-- Modal-->
-        <div class="modal fade" id="editForm" role="dialog">
-          <div class="modal-dialog">
+          <!-- Modal-->
+          <div class="modal fade" id="editForm" role="dialog">
+            <div class="modal-dialog">
 
-            <!-- Modal edit form-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Edit Task</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                <span id="editErrorMessage"></span>
-                <form id="editTask">
-                  <div class="form-group">
-                    <label for="taskname">Name</label>
-                    <input type="text" class="form-control" id="edittaskname" name="taskname">
-                  </div>
-                  <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea type="text" class="form-control" id="editdescription" name="description"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="assignedTo">Assigned to</label>
-                    <input type="text" class="form-control" id="editassignedTo" name="assignedTo">
-                  </div>
-                  <div class="form-group">
-                    <label for="dueDate">Due date</label>
-                    <input type="date" class="form-control" id="editdueDate" name="dueDate">
-                  </div>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-auto">
-                        <label class="status">Status</label>
-                      </div>
-                      <div class="col-auto">
-                        <select id='getEditStatus' class="form-select" aria-label="Default select example" onchange="getEditSelectedValue();">
-                          <option value="" selected>SELECT</option>
-                          <option value="todo">TO DO</option>
-                          <option value="inprogress">IN PROGRESS</option>
-                          <option value="review">REVIEW</option>
-                          <option value="done">DONE</option>
-                        </select>
+              <!-- Modal edit form-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Edit Task</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <span id="editErrorMessage"></span>
+                  <form id="editTask">
+                    <div class="form-group">
+                      <label for="taskname">Name</label>
+                      <input type="text" class="form-control" id="edittaskname"
+                        name="taskname">
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea type="text" class="form-control"
+                        id="editdescription" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="assignedTo">Assigned to</label>
+                      <input type="text" class="form-control"
+                        id="editassignedTo" name="assignedTo">
+                    </div>
+                    <div class="form-group">
+                      <label for="dueDate">Due date</label>
+                      <input type="date" class="form-control" id="editdueDate"
+                        name="dueDate">
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-auto">
+                          <label class="status">Status</label>
+                        </div>
+                        <div class="col-auto">
+                          <select id='getEditStatus' class="form-select"
+                            aria-label="Default select example"
+                            onchange="getEditSelectedValue();">
+                            <option value="" selected>SELECT</option>
+                            <option value="todo">TO DO</option>
+                            <option value="inprogress">IN PROGRESS</option>
+                            <option value="review">REVIEW</option>
+                            <option value="done">DONE</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="text-right">
-                    <button type="submit" class="btn btn-success" id="btnSubmit">SUBMIT</button>
-                    <button type="reset" class="btn btn-danger" id="btnResetEFORM">RESET</button>
-                  </div>
-                </form>
+                    <div class="text-right">
+                      <button type="submit" class="btn btn-success"
+                        id="btnSubmit">SUBMIT</button>
+                      <button type="reset" class="btn btn-danger"
+                        id="btnResetEFORM">RESET</button>
+                    </div>
+                  </form>
 
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- JavaScript-->
-  <script src="asset/js/taskManager.js"></script>
-  <script src="asset/js/index.js"></script>
-  <!-- Jqueary -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <!-- popper -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <!-- bootstrap js -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    <!-- JavaScript-->
+    <script src="asset/js/taskManager.js"></script>
+    <script src="asset/js/index.js"></script>
+    <!-- Jqueary -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <!-- popper -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
 
-</body>
+  </body>
 
 </html>
