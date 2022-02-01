@@ -22,6 +22,11 @@ dateElement.innerText = `${d.getDate()} / ${
   d.getMonth() + 1
 } / ${d.getFullYear()}`;
 
+// Close the modal after submit
+function closeModal() {
+  $('.close').trigger('click');
+}
+
 // CLEAR INPUTS AFTER SUBMIT
 const clearInputs = () => {
   taskname.value = "";
@@ -104,6 +109,7 @@ newForm.addEventListener("submit", (error) => {
       dueDate.value,
       getSelectedValue()
     );
+    closeModal();
     clearInputs();
     taskManager.render();
   }
