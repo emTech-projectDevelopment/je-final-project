@@ -3,6 +3,9 @@
 const taskManager = new TaskManager(0);
 console.log(taskManager);
 
+taskManager.load() // check localStorage 
+taskManager.render(); // render display
+
 // SELECTOR FOR DATE AND TIME
 const dateElement = document.querySelector("#showDate");
 const timeElement = document.querySelector("#showTime");
@@ -20,6 +23,11 @@ tickingTime();
 setInterval(tickingTime, 1000);
 dateElement.innerText = `${d.getDate()} / ${d.getMonth() + 1} / ${d.getFullYear()}`;
 
+
+// Close the modal after submit
+function closeModal() {
+  $('.close').trigger('click');
+}
 
 // CLEAR INPUTS AFTER SUBMIT
 const clearInputs = () => {
@@ -102,10 +110,13 @@ newForm.addEventListener("submit", (error) => {
       dueDate.value,
       getSelectedValue()
     );
+    closeModal();
     clearInputs();
     taskManager.render();
+    taskManager.save();
   }
 });
+
 
 
 const taskList = document.querySelector("#taskList");
@@ -123,6 +134,7 @@ taskList.addEventListener('click', (event)=> {
     taskManager.render();
   }
 });
+
 
 
 // Still working on closing the add task modal on succesfull submission
