@@ -20,6 +20,7 @@ tickingTime();
 setInterval(tickingTime, 1000);
 dateElement.innerText = `${d.getDate()} / ${d.getMonth() + 1} / ${d.getFullYear()}`;
 
+
 // CLEAR INPUTS AFTER SUBMIT
 const clearInputs = () => {
   taskname.value = "";
