@@ -3,6 +3,9 @@
 const taskManager = new TaskManager(0);
 console.log(taskManager);
 
+taskManager.load() // check localStorage 
+taskManager.render(); // render display
+
 // SELECTOR FOR DATE AND TIME
 const dateElement = document.querySelector("#showDate");
 const timeElement = document.querySelector("#showTime");
@@ -112,7 +115,9 @@ newForm.addEventListener("submit", (error) => {
     closeModal();
     clearInputs();
     taskManager.render();
+    taskManager.save();
   }
 });
+
 // Still working on closing the add task modal on succesfull submission
 //of the form
