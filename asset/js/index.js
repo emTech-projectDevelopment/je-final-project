@@ -60,6 +60,11 @@ newForm.addEventListener("submit", (error) => {
   let description = document.querySelector("#description");
   let assignedTo = document.querySelector("#assignedTo");
   let dueDate = document.querySelector("#dueDate");
+  let taskNameError = document.querySelector(".taskNameError");
+  let descriptionError = document.querySelector(".descriptionError");
+  let assignedToError = document.querySelector(".assignedToError");
+  let dueDateError = document.querySelector(".dueDateError");
+  let statusError = document.querySelector(".statusError");
   let newErrorMessage = [];
   error.preventDefault();
 
@@ -72,35 +77,42 @@ newForm.addEventListener("submit", (error) => {
   // VALIDATE NOT EMPTY STRING & HAS VALUE
   if (taskname.value === "" || taskname.value == null) {
     newErrorMessage.push("Enter a Task Name. ");
+    taskNameError.innerText = "Enter a Task Name. ";
   }
   // VALIDATE IF TASK NAME IS LONGER THAN 5 CHARACTERS
   if (taskname.value.length <= 5) {
     newErrorMessage.push(`Name must be longer than 5 letters. `);
+    taskNameError.innerText = "Name must be longer than 5 letters.";
   }
 
   // VALIDATE IF DESCRIPTION IS LONGER THAN 5 CHARACTERS
   if (description.value.length <= 5) {
     newErrorMessage.push(`Description must be longer than 5 letters. `);
+    descriptionError.innerText = `Description must be longer than 5 letters. `;
   }
 
   // VALIDATE IF ASSIGNED TO NAME IS LONGER THAN 5 CHARACTERS
   if (assignedTo.value.length <= 5) {
     newErrorMessage.push(`Assigned To must be longer than 5 letters. `);
+    assignedToError.innerText = `Assigned To must be longer than 5 letters. `;
   }
 
   // VALIDATE IF DUE DATE HAS BEEN SELECTED
   if (dueDate.value.length < 1) {
     newErrorMessage.push("Enter a valid date. ");
+    dueDateError.innerText = "Enter a valid date. ";
   }
 
   // VALIDATE IF STATUS HAS A SELECTED VALUE
   if (getSelectedValue() === "") {
     newErrorMessage.push("Enter task status.");
+    statusError.innerText = 'Enter task status.';
   }
   // VERIFY IF ARRAY CONTAINS ANY ERROR MESSAGES
   if (newErrorMessage.length > 0) {
     error.preventDefault();
     NewErrorMessage.innerHTML = newErrorMessage.join(" ");
+    NewErrorMessage.style.display = 'none';
   } else {
     // SUBMIT VALID FORM TO ARRAY
     taskManager.addTask(
@@ -112,6 +124,11 @@ newForm.addEventListener("submit", (error) => {
     );
     closeModal();
     clearInputs();
+    taskNameError.innerText = "";
+    descriptionError.innerText = "";
+    assignedToError.innerText = "";
+    dueDateError.innerText = "";
+    statusError.innerText = "";
     taskManager.render();
     taskManager.save();
   }
@@ -121,21 +138,24 @@ newForm.addEventListener("submit", (error) => {
 
 const taskList = document.querySelector("#taskList");
 
+// ATTEMPT AT FUNCTION TO REMOVE VISIBILITY. ATTEMPTS AT STYLE.DISPLAY = 'NONE' WERE UNSUCCESSFUL
 function changeVisibility(element){
   element.style.visibility = 'hidden';
 }
 
+
+
 taskList.addEventListener('click', (event)=> {
   if (event.target.classList.contains('done-button')) {
     const doneBTN = document.querySelector("#markDone");
-    //THIS LINE OF CODE DOES NOT WORK BUT SHOULD MAKE THE MARK
-    //DONE BUTTON DISSAPEAR
-    const parentTask =
-    event.target.parentElement.parentElement.parentElement;
+    const parentTask = event.target.parentElement.parentElement.parentElement;
     console.log(parentTask)
     const taskId = Number(parentTask.dataset.taskId);
     const task = taskManager.getTaskById(taskId);
     task.status = "Done";
+
+    //THE BELOW LINE OF CODE DOES NOT WORK BUT SHOULD MAKE THE MARK
+    //DONE BUTTON DISSAPEAR
     changeVisibility(doneBTN)
 
     taskManager.render();
@@ -150,8 +170,6 @@ taskList.addEventListener('click', (event)=> {
     taskManager.render();
   }
 
-  
-  
 });
 
 

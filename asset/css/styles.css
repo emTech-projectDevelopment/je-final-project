@@ -71,3 +71,9 @@ button:hover {
     transform: none;
     border: 1px solid silver;
 }
+.ERROR {
+    color: red;
+    font-weight: 300;
+    letter-spacing: 0.12rem;
+    font-family: monospace;
+}
