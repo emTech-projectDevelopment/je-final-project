@@ -60,6 +60,21 @@ class TaskManager {
     return thisTask;
   }
 
+  // DELETE TASK METHOD
+  deleteTask(taskId) {
+    //NEW TASK ARRAY WITHOUT DELETED TASK
+    const newTasks = [];
+    // LOOP AND FIND CURRENT ID
+    for (let i=0; i<this.tasks.length; i++){
+      const task = this.tasks[i];
+      // AS PER INSTRUCTION
+      if (task.id !== taskId){
+        newTasks.push(task)
+      }
+    }
+    this.tasks = newTasks;
+  };
+
   // RENDER METHOD
   render() {
     let tasksHtmlList = [];

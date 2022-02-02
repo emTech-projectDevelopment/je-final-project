@@ -59,7 +59,8 @@ button:hover {
     font-variant: small-caps;
 }
 .done-button {
-    margin: 10px auto;
+    margin: auto;
+    margin-left: 2.5rem;
     padding: 1px 2px;
     background: rgb(59, 201, 59);
     border-radius: 5px;
