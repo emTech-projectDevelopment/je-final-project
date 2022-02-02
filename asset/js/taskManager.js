@@ -15,7 +15,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   <section class="text-right">
     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
       data-target="#editForm">EDIT</button>
-    <button class="delete btn btn-danger btn-sm" name="delete">DELETE</button>
+    <button class="delete-button btn btn-danger btn-sm" name="delete">DELETE</button>
   </section>
 </li>`;
   return html;
