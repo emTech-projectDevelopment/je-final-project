@@ -142,7 +142,8 @@ taskList.addEventListener('click', (event)=> {
   }
 
   if (event.target.classList.contains('delete-button')) {
-    const parentTask = event.target.parentElement.parentElement.parentElement;
+    const parentTask = event.target.parentElement.parentElement;
+    console.log(parentTask)
     const taskId = Number(parentTask.dataset.taskId);
     taskManager.deleteTask(taskId);
     taskManager.save();

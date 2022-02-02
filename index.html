@@ -60,21 +60,25 @@
                         <label for="taskname">Name</label>
                         <input type="text" class="form-control" id="taskname"
                           name="taskname">
+                        <span class="taskNameError"></span>
                       </div>
                       <div class="form-group">
                         <label for="description">Description</label>
                         <textarea type="text" class="form-control"
                           id="description" name="description"></textarea>
+                        <span class="descriptionError"></span>
                       </div>
                       <div class="form-group">
                         <label for="assignedTo">Assigned to</label>
                         <input type="text" class="form-control" id="assignedTo"
                           name="assignedTo">
+                        <span class="assignedToError"></span>
                       </div>
                       <div class="form-group">
                         <label for="dueDate">Due date</label>
                         <input type="date" class="form-control" id="dueDate"
                           name="dueDate">
+                        <span class="dueDateError"></span>
                       </div>
                       <div class="form-group">
                         <div class="row">
@@ -91,6 +95,7 @@
                               <option value="review">REVIEW</option>
                               <option value="done">DONE</option>
                             </select>
+                            <span class="statusError"></span>
                           </div>
                         </div>
                       </div>
