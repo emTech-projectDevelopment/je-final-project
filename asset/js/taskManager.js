@@ -15,7 +15,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
   <section class="text-right">
     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
       data-target="#editForm">EDIT</button>
-    <button class="delete btn btn-danger btn-sm" name="delete">DELETE</button>
+    <button class="delete-button btn btn-danger btn-sm" name="delete">DELETE</button>
   </section>
 </li>`;
   return html;
@@ -59,6 +59,21 @@ class TaskManager {
     // Return the found task
     return thisTask;
   }
+
+  // DELETE TASK METHOD
+  deleteTask(taskId) {
+    //NEW TASK ARRAY WITHOUT DELETED TASK
+    const newTasks = [];
+    // LOOP AND FIND CURRENT ID
+    for (let i=0; i<this.tasks.length; i++){
+      const task = this.tasks[i];
+      // AS PER INSTRUCTION
+      if (task.id !== taskId){
+        newTasks.push(task)
+      }
+    }
+    this.tasks = newTasks;
+  };
 
   // RENDER METHOD
   render() {

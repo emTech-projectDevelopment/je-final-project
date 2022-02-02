@@ -26,7 +26,7 @@ dateElement.innerText = `${d.getDate()} / ${d.getMonth() + 1} / ${d.getFullYear(
 
 // Close the modal after submit
 function closeModal() {
-  $('.close').trigger('click');
+  $('.modal').modal('hide');
 }
 
 // CLEAR INPUTS AFTER SUBMIT
@@ -120,19 +120,38 @@ newForm.addEventListener("submit", (error) => {
 
 
 const taskList = document.querySelector("#taskList");
-const getStatus = document.querySelector("#getStatus").value;
+
+function changeVisibility(element){
+  element.style.visibility = 'hidden';
+}
 
 taskList.addEventListener('click', (event)=> {
   if (event.target.classList.contains('done-button')) {
+    const doneBTN = document.querySelector("#markDone");
+    //THIS LINE OF CODE DOES NOT WORK BUT SHOULD MAKE THE MARK
+    //DONE BUTTON DISSAPEAR
     const parentTask =
     event.target.parentElement.parentElement.parentElement;
     console.log(parentTask)
     const taskId = Number(parentTask.dataset.taskId);
     const task = taskManager.getTaskById(taskId);
     task.status = "Done";
+    changeVisibility(doneBTN)
 
     taskManager.render();
   }
+
+  if (event.target.classList.contains('delete-button')) {
+    const parentTask = event.target.parentElement.parentElement;
+    console.log(parentTask)
+    const taskId = Number(parentTask.dataset.taskId);
+    taskManager.deleteTask(taskId);
+    taskManager.save();
+    taskManager.render();
+  }
+
+  
+  
 });
 
 
