@@ -156,8 +156,8 @@ taskList.addEventListener('click', (event)=> {
 
     //THE BELOW LINE OF CODE DOES NOT WORK BUT SHOULD MAKE THE MARK
     //DONE BUTTON DISSAPEAR
-    changeVisibility(doneBTN)
-
+    //changeVisibility(doneBTN)
+    taskManager.save()
     taskManager.render();
   }
 
