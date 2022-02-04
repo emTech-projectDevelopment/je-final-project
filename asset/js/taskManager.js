@@ -1,4 +1,11 @@
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
+
+  let markDoneBtn = "";
+
+  if(status!= "Done"){
+    markDoneBtn = `<button class="done-button" id="markDone">Mark as done</button>`
+  }
+  
   const html = `<li class="list-group-item" data-task-id=${id}>
   <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
     <h5>Task Name : ${name}</h5>
@@ -8,7 +15,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
     <h6>Assigned to : ${assignedTo}</h6>
     <div class="group-right">
       <h6>DUE DATE : ${dueDate}</h6>
-      <button class="done-button" id="markDone">Mark as done</button>
+      ${markDoneBtn}
     </div>
   </div>
   <p>Task Description : ${description}</p>
