@@ -139,8 +139,12 @@ newForm.addEventListener("submit", (error) => {
 const taskList = document.querySelector("#taskList");
 
 // ATTEMPT AT FUNCTION TO REMOVE VISIBILITY. ATTEMPTS AT STYLE.DISPLAY = 'NONE' WERE UNSUCCESSFUL
-function changeVisibility(element){
+/*function changeVisibility(element){
   element.style.visibility = 'hidden';
+}*/
+
+function showDiv() {
+  document.getElementById('markDone').style.display = "none";
 }
 
 
@@ -159,6 +163,8 @@ taskList.addEventListener('click', (event)=> {
     //changeVisibility(doneBTN)
     taskManager.save()
     taskManager.render();
+
+    showDiv();
   }
 
   if (event.target.classList.contains('delete-button')) {
