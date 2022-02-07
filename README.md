@@ -7,7 +7,7 @@ Our Task Planner's purpose is to allow you to create tasks that you've assigned 
 
 ## Preview of the Task Planner
 
-<img src='task-planner-readme.jpg' height='500'>
+<img src='task-planner-readme-update.jpg' height='500'>
 
 ## Languages being used 💻
 -  HTML
