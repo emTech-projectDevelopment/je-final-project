@@ -10,6 +10,10 @@
 -  JavaScript
 -  CSS
 
+## Preview of the Task Planner
+
+<img src='task-planner-readme.jpg'>
+
 ## Code formatting used ℹ️
 
 - Prettier code formatter
